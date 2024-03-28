@@ -1,0 +1,262 @@
+/* imported font */
+@font-face {
+    font-family: OpenSans;
+    src: url(OpenSans.ttf);
+    font-weight: 600;
+}
+
+/* basic formatting */
+* {
+    font-family: OpenSans, sans-serif;
+    line-height: 140%;
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: #848484;
+}
+
+a {
+    color: white;
+}
+
+p {
+    text-indent: 50px;
+}
+
+a:visited {
+    color: #4B4B4B;
+}
+
+/* header formatting */
+header {
+    background-color: #6B6B6B;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 2px solid black;
+}
+
+/* header name formatting w/gradient background */
+#name {
+    background: black;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    border-left: 0px;
+    margin: 15px 0px;
+    max-width: 400px;
+    flex: 1 0 auto;
+}
+
+/* header h1 */
+#name h1 {
+    color: white;
+    font-size: 40px;
+    padding: 20px 30px;
+}
+
+/* horizontal nav links */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+    margin: 35px 15px;
+}
+
+header ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    bottom: 0;
+    white-space: nowrap;
+    
+    font-size: 25px;
+}
+
+header li {
+    padding-right: 15px;
+    display: grid;
+    place-items: center;
+}
+
+/* spacer formatting */
+.spacer {
+    position: relative;
+    bottom: 2px;
+    color: black;
+}
+
+/* main content formatting */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+/* sections in main */
+main section {
+    display: flex;
+    flex-direction: row;
+    max-width: 1500px;
+}
+
+#projects section {
+    display: flex;
+    flex-direction: column;
+    width:75%
+}
+
+/* formatting for titles of each section */
+.desc { 
+    width: 25%;
+    padding: 20px;
+    display: flex;
+    justify-content: right;
+    border: 0px solid black;
+    border-right-width: 2px;
+    flex: 0 0 auto;
+}
+
+/* formatting for content next to titles of sections */
+.content {
+    padding: 15px;
+    width: 100%;
+}
+
+#rows .content {
+    display: flex;
+    padding: 0px;
+    height: 100%;
+}
+
+/* formatting for cards containing projects */
+.card {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 15px;
+    background-color: white;
+}
+
+/* makes main project larger than the others */
+#mainproj { 
+    width: 100%;
+}
+
+.card > a > img {
+    width: 100%;
+}
+
+.card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+}
+
+/* project title transitions from left to right */
+a span {
+    position: absolute;
+    bottom: 40px;
+    left: -200px;
+    padding: 10px;
+    background: rgba(132, 132, 132, .9);
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: 2px solid black;
+    border-left: 0px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+.card a:hover span {
+    left:0px;
+}
+
+/* formatting for contact info > horizontal list */
+.content ul {
+    display: flex;
+}
+
+h2 {
+    text-align: right;
+}
+
+#pic {
+    float: left;
+    margin: 0px 10px 10px 0px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+nav.content { 
+    display: flex;
+    align-items: center;
+}
+
+nav.content li {
+    padding: 0px 5px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.spacer h3 {
+    color: black;
+}
+
+/* padding main sections */
+#about, #projects, #contact {
+    padding: 20px 0px;
+}
+
+/* if screen is smaller than 1000px wide sets everything to vertical columns and removes spacers */
+@media screen and (max-width: 1000px) {
+    .card {
+        width: 100%;
+    }
+
+    .content, #projects, #projects section, #contact, #about {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .desc, #rows {
+        width: 100%;
+        justify-content: center;
+    }
+
+    ul {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 0px;
+        margin: 5px 0px;
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    .nav, ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .desc {
+        border-right: 0px;
+    }
+}
